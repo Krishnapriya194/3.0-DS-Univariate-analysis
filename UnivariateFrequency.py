@@ -38,9 +38,9 @@ class UnivariatePlacement():
 
     def replacing_outliers(descriptive,dataset,lesser,greater):
         for columnName in lesser:
-            dataset.loc[dataset[columnName]<descriptive.loc["Lesser",columnName]]=descriptive.loc["Lesser",columnName]
+            dataset.loc[dataset[columnName]<descriptive.loc["Lesser",columnName],columnName]=descriptive.loc["Lesser",columnName]
         for columnName in greater:
-            dataset.loc[dataset[columnName]>descriptive.loc["Greater",columnName]]=descriptive.loc["Greater",columnName]
+            dataset.loc[dataset[columnName]>descriptive.loc["Greater",columnName],columnName]=descriptive.loc["Greater",columnName]
         return descriptive
 
     def freqTable(quan,dataset):
